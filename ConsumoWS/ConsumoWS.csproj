@@ -317,6 +317,7 @@
       <LastGenOutput>Reference.cs</LastGenOutput>
     </None>
     <Content Include="frmCategoria.aspx" />
+    <Content Include="frmDistrito.aspx" />
     <Content Include="frmMarca.aspx" />
     <Content Include="frmProducto.aspx" />
     <Content Include="Global.asax" />
@@ -348,6 +349,13 @@
     </Compile>
     <Compile Include="frmProducto.aspx.designer.cs">
       <DependentUpon>frmProducto.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="frmDistrito.aspx.cs">
+      <DependentUpon>frmDistrito.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="frmDistrito.aspx.designer.cs">
+      <DependentUpon>frmDistrito.aspx</DependentUpon>
     </Compile>
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
