@@ -1,4 +1,4 @@
-﻿using ConsumoWS.WSCiberElectrik;
+using ConsumoWS.WSCiberElectrik;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -10,7 +10,6 @@ namespace ConsumoWS
 {
     public partial class frmMarca : System.Web.UI.Page
     {
-        //Declaramos el servicio de forma global para poder usarlo en cualquier parte de la clase
         WBSCiberElectrikWSSoapClient servicio = new WBSCiberElectrikWSSoapClient();
 
         protected void Page_Load(object sender, EventArgs e)
@@ -21,7 +20,6 @@ namespace ConsumoWS
             }
         }
 
-        //Creamos un procedimiento para mostrar marca
         private void MostrarMarca()
         {
             try
