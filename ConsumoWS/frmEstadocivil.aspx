@@ -1,4 +1,4 @@
-<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="frmDistrito.aspx.cs" Inherits="ConsumoWS.frmDistrito" %>
+<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="frmEstadocivil.aspx.cs" Inherits="ConsumoWS.frmEstadocivil" %>
 
 <!DOCTYPE html>
 
@@ -6,12 +6,12 @@
 <head runat="server">
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Mantenimiento de Distrito</title>
+    <title>Mantenimiento de Estado Civil</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous" />
 </head>
 <body>
     <div class="container-fluid">
-        <h1 class="text-center">Mantenimiento de Distrito</h1>
+        <h1 class="text-center">Mantenimiento de Estado Civil</h1>
         <form id="form1" runat="server">
             <asp:ScriptManager ID="ScriptManager1" runat="server"></asp:ScriptManager>
             <asp:UpdatePanel ID="UpdatePanel1" runat="server">
@@ -40,13 +40,13 @@
             <asp:UpdatePanel ID="UpdatePanel2" runat="server">
                 <ContentTemplate>
                     <div class="table-responsive">
-                        <asp:GridView ID="grvDistrito" runat="server" AutoGenerateColumns="false" CssClass="table table-striped table-hover table-bordered" OnRowCommand="grvDistrito_RowCommand">
+                        <asp:GridView ID="grvEstadocivil" runat="server" AutoGenerateColumns="false" CssClass="table table-striped table-hover table-bordered" OnRowCommand="grvEstadocivil_RowCommand">
                             <Columns>
-                                <asp:BoundField DataField="codigo" HeaderText="Codigo" HeaderStyle-CssClass="table-dark" />
-                                <asp:BoundField DataField="nombre" HeaderText="Nombre" HeaderStyle-CssClass="table-dark" />
+                                <asp:BoundField DataField="codestc" HeaderText="Código" HeaderStyle-CssClass="table-dark" />
+                                <asp:BoundField DataField="nomestc" HeaderText="Nombre" HeaderStyle-CssClass="table-dark" />
                                 <asp:TemplateField HeaderText="Estado" HeaderStyle-CssClass="table-dark">
                                     <ItemTemplate>
-                                        <%# Convert.ToBoolean(Eval("estado")) ? "Habilitado" : "Deshabilitado" %>
+                                        <%# Convert.ToBoolean(Eval("estestc")) ? "Habilitado" : "Deshabilitado" %>
                                     </ItemTemplate>
                                 </asp:TemplateField>
                                 <asp:ButtonField Text="Seleccionar" CommandName="Seleccionar" HeaderStyle-CssClass="table-dark" />

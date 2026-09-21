@@ -11,7 +11,7 @@ namespace ConsumoWS
 {
 
 
-    public partial class frmDistrito
+    public partial class frmRol
     {
 
         /// <summary>
@@ -141,12 +141,12 @@ namespace ConsumoWS
         protected global::System.Web.UI.UpdatePanel UpdatePanel2;
 
         /// <summary>
-        /// Control grvDistrito.
+        /// Control grvRol.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.GridView grvDistrito;
+        protected global::System.Web.UI.WebControls.GridView grvRol;
     }
 }

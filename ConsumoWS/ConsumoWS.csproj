@@ -320,6 +320,10 @@
     <Content Include="frmDistrito.aspx" />
     <Content Include="frmMarca.aspx" />
     <Content Include="frmProducto.aspx" />
+    <Content Include="frmSexo.aspx" />
+    <Content Include="frmTipoDocumento.aspx" />
+    <Content Include="frmRol.aspx" />
+    <Content Include="frmEstadocivil.aspx" />
     <Content Include="Global.asax" />
     <Content Include="Web.config" />
   </ItemGroup>
@@ -356,6 +360,34 @@
     </Compile>
     <Compile Include="frmDistrito.aspx.designer.cs">
       <DependentUpon>frmDistrito.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="frmSexo.aspx.cs">
+      <DependentUpon>frmSexo.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="frmSexo.aspx.designer.cs">
+      <DependentUpon>frmSexo.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="frmTipoDocumento.aspx.cs">
+      <DependentUpon>frmTipoDocumento.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="frmTipoDocumento.aspx.designer.cs">
+      <DependentUpon>frmTipoDocumento.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="frmRol.aspx.cs">
+      <DependentUpon>frmRol.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="frmRol.aspx.designer.cs">
+      <DependentUpon>frmRol.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="frmEstadocivil.aspx.cs">
+      <DependentUpon>frmEstadocivil.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="frmEstadocivil.aspx.designer.cs">
+      <DependentUpon>frmEstadocivil.aspx</DependentUpon>
     </Compile>
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
