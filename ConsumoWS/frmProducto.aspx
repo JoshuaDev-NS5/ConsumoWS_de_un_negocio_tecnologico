@@ -80,7 +80,7 @@
                     <div class="table-responsive">
                         <asp:GridView ID="grvProducto" runat="server" AutoGenerateColumns="false" CssClass="table table-striped table-hover  table-bordered" OnRowCommand="grvProducto_RowCommand">
                             <Columns>
-                                <asp:BoundField DataField="codigo" HeaderText="Código" HeaderStyle-CssClass="table-dark" />
+                                <asp:BoundField DataField="codigo" HeaderText="Codigo" HeaderStyle-CssClass="table-dark" />
                                 <asp:BoundField DataField="nombre" HeaderText="Nombre" HeaderStyle-CssClass="table-dark" />
                                 <asp:BoundField DataField="descripcion" HeaderText="Descripcion" HeaderStyle-CssClass="table-dark" />
                                 <asp:BoundField DataField="precio" HeaderText="Precio" HeaderStyle-CssClass="table-dark" />

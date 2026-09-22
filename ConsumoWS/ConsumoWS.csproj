@@ -318,6 +318,7 @@
     </None>
     <Content Include="frmCategoria.aspx" />
     <Content Include="frmDistrito.aspx" />
+    <Content Include="frmEmpleado.aspx" />
     <Content Include="frmMarca.aspx" />
     <Content Include="frmProducto.aspx" />
     <Content Include="frmSexo.aspx" />
@@ -339,6 +340,13 @@
     </Compile>
     <Compile Include="frmCategoria.aspx.designer.cs">
       <DependentUpon>frmCategoria.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="frmEmpleado.aspx.cs">
+      <DependentUpon>frmEmpleado.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="frmEmpleado.aspx.designer.cs">
+      <DependentUpon>frmEmpleado.aspx</DependentUpon>
     </Compile>
     <Compile Include="frmMarca.aspx.cs">
       <DependentUpon>frmMarca.aspx</DependentUpon>
