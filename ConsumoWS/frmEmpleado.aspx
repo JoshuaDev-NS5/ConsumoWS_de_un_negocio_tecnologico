@@ -38,7 +38,7 @@
                     <%--Documento de empleado--%>
                     <div class="col-5">
                         <asp:Label ID="Label4" runat="server" Text="Documento" CssClass="form-label"></asp:Label>
-                        <asp:TextBox ID="txtDoc" runat="server" CssClass="form-control" TextMode="Number"></asp:TextBox>
+                        <asp:TextBox ID="txtDoc" runat="server" CssClass="form-control" ></asp:TextBox>
                     </div>
                     <%--Direccion  del empleado--%>
                     <div class="col-5">
@@ -78,7 +78,7 @@
                     <%--Contraseña empleado--%>
                     <div class="col-5">
                         <asp:Label ID="Label14" runat="server" Text="Contraseña" CssClass="form-label"></asp:Label>
-                        <asp:TextBox ID="txtContraseña" runat="server" CssClass="form-control" TextMode="Password"></asp:TextBox>
+                        <asp:TextBox ID="txtContraseña" runat="server" CssClass="form-control" ></asp:TextBox>
                     </div>
                     <%--Seleccionar Distrito--%>
                     <div class="col-5">
@@ -114,10 +114,10 @@
                         </div>
 
                     </div>
-                    <asp:Button ID="btnRegistrar" runat="server" Text="Registrar" CssClass="btn btn-primary"  />
-                    <asp:Button ID="btnActualizar" runat="server" Text="Actualizar" CssClass="btn btn-success"  />
-                    <asp:Button ID="btnEliminar" runat="server" Text="Eliminar" CssClass="btn btn-danger"  />
-                    <asp:Button ID="btnHabilitar" runat="server" Text="Habilitar" CssClass="btn btn-warning"  />
+                    <asp:Button ID="btnRegistrar" runat="server" Text="Registrar" CssClass="btn btn-primary" OnClick="btnRegistrar_Click"  />
+                    <asp:Button ID="btnActualizar" runat="server" Text="Actualizar" CssClass="btn btn-success" OnClick="btnActualizar_Click"  />
+                    <asp:Button ID="btnEliminar" runat="server" Text="Eliminar" CssClass="btn btn-danger" OnClick="btnEliminar_Click" />
+                    <asp:Button ID="btnHabilitar" runat="server" Text="Habilitar" CssClass="btn btn-warning" OnClick="btnHabilitar_Click" />
                 </ContentTemplate>
             </asp:UpdatePanel>
 
@@ -126,12 +126,19 @@
 
             <asp:UpdatePanel ID="UpdatePanel2" runat="server">
                 <ContentTemplate>
-                    <div class="table-responsive">
-                        <asp:GridView ID="grvEmpleado" runat="server" AutoGenerateColumns="false" CssClass="table table-striped table-hover  table-bordered" >
+
+                    <div id="scrollTop" style="overflow-x: auto; width: 100%;">
+                         <div style="height: 1px; width: 2000px;"></div>
+                    </div>
+
+                    <div class="table-responsive" id="scrollBottom" >
+
+                        <asp:GridView ID="grvEmpleado" runat="server" AutoGenerateColumns="false" CssClass="table table-striped table-hover  table-bordered"  OnRowCommand="grvEmpleado_RowCommand">
                             <Columns>
                                 <asp:BoundField DataField="codemp" HeaderText="Codigo" HeaderStyle-CssClass="table-dark" />
                                 <asp:BoundField DataField="nomemp" HeaderText="Nombre" HeaderStyle-CssClass="table-dark" />
-                                <asp:BoundField DataField="apepemp" HeaderText="A.Materno" HeaderStyle-CssClass="table-dark" />
+                                <asp:BoundField DataField="apepemp" HeaderText="A.Paterno" HeaderStyle-CssClass="table-dark" />
+                                <asp:BoundField DataField="apememp" HeaderText="A.Materno" HeaderStyle-CssClass="table-dark" />
                                 <asp:BoundField DataField="docemp" HeaderText="Documento" HeaderStyle-CssClass="table-dark" />
                                 <asp:BoundField DataField="diremp" HeaderText="Direccion" HeaderStyle-CssClass="table-dark" />
                                 <asp:BoundField DataField="fecemp" HeaderText="Fecha de Nacimiento" HeaderStyle-CssClass="table-dark" DataFormatString="{0:yyyy-MM-dd}" HtmlEncode="false" />
@@ -166,5 +173,37 @@
         </form>
     </div>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+   <script>
+       function configurarScroll() {
+
+           const scrollTop = document.getElementById("scrollTop");
+           const scrollBottom = document.getElementById("scrollBottom");
+
+           if (!scrollTop || !scrollBottom) return;
+
+           scrollTop.onscroll = function () {
+               scrollBottom.scrollLeft = scrollTop.scrollLeft;
+           };
+
+           scrollBottom.onscroll = function () {
+               scrollTop.scrollLeft = scrollBottom.scrollLeft;
+           };
+
+           const tabla = scrollBottom.querySelector("table");
+
+           if (tabla) {
+               scrollTop.firstElementChild.style.width =
+                   tabla.scrollWidth + "px";
+           }
+       }
+
+       // Primera carga
+       window.onload = configurarScroll;
+
+       // Después de cada actualización del UpdatePanel mantiene el funcionamiento del segundo sccroll
+       Sys.WebForms.PageRequestManager.getInstance()
+           .add_endRequest(configurarScroll);
+   </script>
+
 </body>
 </html>
